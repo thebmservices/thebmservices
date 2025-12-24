@@ -1,0 +1,284 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f6f1eb;
+}
+header {
+  background: linear-gradient(to right, #2c2c2c, #5a3e2b);
+  color: white;
+  text-align: center;
+  padding: 40px;
+}
+nav {
+  background: #3b2f25;
+  text-align: center;
+  padding: 12px;
+}
+
+nav a {
+  color: white;
+  margin: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section {
+  background: white;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}/* ===== MASONRY GALLERY FIX ===== */
+
+.gallery {
+  column-count: 3;
+  column-gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 500px) {
+  .gallery {
+    column-count: 1;
+  }
+}
+
+.item {
+  break-inside: avoid;
+  margin-bottom: 20px;
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.item p {
+  margin-top: 10px;
+  font-weight: bold;
+}.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: white;
+  font-size: 28px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 55px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+}#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}.service-box {
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.service-box h3 {
+  margin-top: 0;
+  color: #3b2f25;
+}
+
+.price {
+  font-weight: bold;
+  color: #8b5e3c;
+}.brand-header {
+  background: linear-gradient(to right, #2c2c2c, #5a3e2b);
+  text-align: left;
+  padding: 50px 20px;
+  color: white;
+}
+
+.logo {
+  font-size: 42px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.tagline {
+  font-size: 16px;
+  color: #f1c40f;
+  margin: 5px 0;
+}
+
+.subtitle {
+  font-size: 15px;
+  opacity: 0.9;
+}.contact-section {
+  background: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+  margin: 20px;
+  border-radius: 12px;
+}
+
+.contact-section h2 {
+  color: #3b2f25;
+}
+
+.contact-box {
+  margin: 20px auto;
+  max-width: 400px;
+  text-align: left;
+  background: #f6f1eb;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.contact-box p {
+  margin: 8px 0;
+}
+
+.contact-btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: #25d366;
+  color: white;
+  padding: 14px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}.contact-actions {
+  margin-top: 20px;
+}
+
+.email-btn {
+  display: inline-block;
+  margin-left: 10px;
+  background: #8b5e3c;
+  color: white;
+  padding: 14px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}.instagram-section {
+  background: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+  margin: 20px;
+  border-radius: 12px;
+}
+
+.ig-follow-btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+  color: white;
+  padding: 14px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}/* ===== INSTAGRAM GRID FIX ===== */
+
+.ig-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+.instagram-media {
+  max-width: 100% !important;
+  min-width: auto !important;
+  margin: 0 auto !important;
+}.logo-img {
+  width: 120px;       /* unaweza kubadilisha 100–140 */
+  margin-bottom: 15px;
+}
+
+.logo-text {
+  font-size: 34px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.tagline {
+  font-size: 15px;
+  color: #f1c40f;
+  margin-top: 5px;
+}.logo-img {
+  width: 90px;       /* unaweza kubadilisha 80–110 kulingana na ladha */
+  height: auto;
+  margin-bottom: 10px;
+}/* ===== HEADER LAYOUT FIX ===== */
+
+.brand-header {
+  background: linear-gradient(to right, #2c2c2c, #5a3e2b);
+  padding: 40px 30px;
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo-img {
+  width: 90px;   /* unaweza kubadilisha 80–110 */
+  height: auto;
+}
+
+.brand-text {
+  color: white;
+}
+
+.logo-title {
+  font-size: 42px;
+  margin: 0;
+}
+
+.tagline {
+  font-size: 18px;
+  color: #f1c40f;
+  margin: 5px 0;
+}
+
+.subtitle {
+  font-size: 16px;
+  opacity: 0.9;
+}@media (max-width: 600px) {
+  .brand-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
