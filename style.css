@@ -281,4 +281,31 @@ footer {
     flex-direction: column;
     text-align: center;
   }
+
+} .hero-text, .why-us, .services-intro, .projects-intro, .final-cta {
+  background: #ffffff;
+  padding: 40px 20px;
+  margin: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.why-us ul {
+  list-style: none;
+  padding: 0;
+}
+
+.why-us li {
+  margin: 10px 0;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: #8b5e3c;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
 }
