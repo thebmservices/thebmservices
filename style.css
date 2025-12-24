@@ -334,3 +334,22 @@ footer {
   text-align: center;
   background: #f6f1eb;
 }
+.footer-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #2c2c2c;
+  padding: 15px 10px;
+  margin-top: 40px;
+}
+
+.footer-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.footer-nav a:hover {
+  color: #f1c40f;
+}
