@@ -450,3 +450,57 @@ body {
   background: #8b5e3c;
   transform: translateY(-2px);
 }
+/* ===== STICKY NAVBAR ===== */
+
+.main-nav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #3b2f25;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+}
+
+.nav-link {
+  position: relative;
+  padding: 10px 16px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 25px;
+  overflow: hidden;
+  z-index: 1;
+}
+/* ===== ICONS BEHIND TEXT ===== */
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  opacity: 0.35;
+  z-index: -1;
+}
+
+/* Individual icons */
+.nav-link.home::before {
+  content: "🏠";
+}
+
+.nav-link.services::before {
+  content: "🛠️";
+}
+
+.nav-link.projects::before {
+  content: "🖼️";
+}
+
+.nav-link.contact::before {
+  content: "📞";
+}.nav-link:hover {
+  background: #8b5e3c;
+}
