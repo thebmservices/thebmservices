@@ -414,3 +414,39 @@ body {
 body {
   padding-bottom: 70px;
 }
+/* ===== STICKY NAVBAR ===== */
+
+.main-nav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #3b2f25; /* rangi ya brand */
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 12px 10px;
+}
+
+/* menu links */
+.main-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 25px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+/* icon style */
+.main-nav .icon {
+  font-size: 16px;
+}
+
+/* hover effect */
+.main-nav a:hover {
+  background: #8b5e3c;
+  transform: translateY(-2px);
+}
