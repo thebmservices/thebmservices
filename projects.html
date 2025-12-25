@@ -19,11 +19,25 @@
   <h1 class="logo-text">Thebm GypsumPro FinishingTeam</h1>
   <p class="tagline">Interior • Gypsum • Lighting</p>
 </header>
-<nav>
-  <a href="index.html"><span class="icon">🏠</span> Mwanzo/Home</a>
-  <a href="services.html"><span class="icon">🛠️</span>Huduma/Services</a>
-  <a href="projects.html"><span class="icon">📸</span> Miradi Yetu/Our Projects</a>
-  <a href="#contact"><span class="icon">📞</span> Wasiliana Nasi/Contact Us</a>
+<nav class="navbar">
+  <div class="nav-logo">
+    <img src="images/logo.png" alt="TheBmservice Logo">
+    <div class="brand-text">
+      <strong>TheBmservice</strong><br>
+      <span>Thebm GypsumPro Finishing Team</span>
+    </div>
+  </div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="nav-link">🏠 Home</a></li>
+    <li><a href="services.html" class="nav-link">🛠 Services</a></li>
+    <li><a href="projects.html" class="nav-link">🖼 Our Projects</a></li>
+    <li><a href="index.html#contact" class="nav-link">📞 Contact Us</a></li>
+  </ul>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    ☰
+  </div>
 </nav>
 
 <section>
@@ -196,9 +210,25 @@ function closeLightbox() {
   <a href="projects.html">📸Our Projects</a>
  <a href="index.html#contact">📞Contact Us</a>
 </div>
+ <script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+  }
+
+  // Active page highlight
+  const links = document.querySelectorAll(".nav-link");
+  const currentPage = window.location.pathname.split("/").pop();
+
+  links.forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+</script> 
 </body>
 
 </html>
+
 
 
 
