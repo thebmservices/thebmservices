@@ -182,37 +182,60 @@ tunakuhakishia huduma bora na kwa muda sahii daima tunalinda tabasamu la nyumba 
   <a href="services.html">🛠 Services</a>
   <a href="projects.html">📸 Our Projects</a>
   <a href="#contact">📞 Contact Us</a>
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- Brand -->
+    <div class="footer-box">
+      <h3>TheBmservice</h3>
+      <p>Thebm GypsumPro Finishing Team</p>
+      <p>Gypsum • Interior • Lighting</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-box">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Our Projects</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-box">
+      <h4>Contact</h4>
+      <p>📞 0764 840 447</p>
+      <p>📧 bmlatyofficially@gmail.com</p>
+      <p>📍 Tanzania</p>
+    </div>
+
+    <!-- Socials -->
+    <div class="footer-box">
+      <h4>Follow Us</h4>
+      <a href="https://wa.me/255764840447" target="_blank">WhatsApp</a><br>
+      <a href="https://www.instagram.com/thebm_gypsumpro_finishingteam" target="_blank">
+        Instagram
+      </a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>
+      © <span id="year"></span> TheBmservice. All Rights Reserved.
+    </p>
+  </div>
 </footer>
- <div class="bottom-menu">
-  <a href="index.html">🏠Home</a>
-  <a href="services.html">🛠 Services</a>
-  <a href="projects.html">📸Our Projects</a>
- <a href="contact.html">📞Contact Us</a>
-</div> 
- <div class="bottom-nav">
-  <a href="index.html">🏠Home</a>
-  <a href="services.html">🛠Services</a>
-  <a href="projects.html">📸Our Projects</a>
-  <a href="#contact">📞Contact Us</a>
-</div> 
+
 <script>
-  function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("show");
-  }
-
-  // Active page highlight
-  const links = document.querySelectorAll(".nav-link");
-  const currentPage = window.location.pathname.split("/").pop();
-
-  links.forEach(link => {
-    if (link.getAttribute("href") === currentPage) {
-      link.classList.add("active");
-    }
-  });
-</script>  
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 
 </html>
+
 
 
 
