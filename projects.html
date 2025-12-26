@@ -59,79 +59,79 @@ Kila mradi unatekelezwa kwa ubora, umakini na viwango vya kisasa.</p>
     </div>
 
     <div class="item">
-      <img src="images/project2.jpg"> onclick="openLightbox(this.src)">
+      <img src="images/project2.jpg" onclick="openLightbox(this.src)">
       <p>Interior Design</p>
     </div>
 
     <div class="item">
-      <img src="images/project3.jpg" onclick="openLightbox(this.src)">>
+      <img src="images/project3.jpg" onclick="openLightbox(this.src)">
       <p>tvshowcas</p>
     </div>
 
     <div class="item">
-      <img src="images/project4.jpg" onclick="openLightbox(this.src)">>
+      <img src="images/project4.jpg" onclick="openLightbox(this.src)">
       <p>Modern Kitchencabinet</p>
     </div> 
 
   <div class="item">
-    <img src="images/project5.jpg" loading="lazy" alt="Gypsum design"></div>
+    <img src="images/project5.jpg "onclick="openLightbox(this.src)"> </div>
 
   <div class="item">
-    <img src="images/project6.jpg" loading="lazy" alt="Gypsum design"></div>
+    <img src="images/project6.jpg" onclick="openLightbox(this.src)"></div>
 
   <div class="item">
-    <img src="images/project7.jpg" loading="lazy" alt="Gypsum design"></div>
+    <img src="images/project7.jpg" onclick="openLightbox(this.src)"></div>
 
   <div class="item">
-    <img src="images/project8.jpg" loading="lazy" alt="Gypsum design"></div>
+    <img src="images/project8.jpg" onclick="openLightbox(this.src)"></div>
  
   <div class="item">
-    <img src="images/project9.jpg" loading="lazy" alt="Gypsum design"></div>
+    <img src="images/project9.jpg" onclick="openLightbox(this.src)"></div>
 
-  <div class="item
-    img src="images/project10.jpg" loading="lazy" alt="Gypsum design"></div>
+  <div class="item">
+    <img src="images/project10.jpg" onclick="openLightbox(this.src)"></div>
   
   <div class="item">
-    <img src="images/project11.jpg" loading="lazy" alt="Gypsum design"></div>
+    <img src="images/project11.jpg" onclick="openLightbox(this.src)"></div>
     
   <div class="item">
-  <img src="images/project12.jpg" loading="lazy" alt="Gypsum design"></div>
+  <img src="images/project12.jpg" onclick="openLightbox(this.src)"></div>
   
   <div class="item">
-    <img src="images/project13.jpg" loading="lazy" alt="Gypsum design">></div>
+    <img src="images/project13.jpg"onclick="openLightbox(this.src)"></div>
   
   <div class="item">
-    <img src="images/project14.jpg" loading="lazy" alt="Gypsum design"></div>
+    <img src="images/project14.jpg" onclick="openLightbox(this.src)"></div>
 
   <div class="item">
-    <img src="images/project15.jpg" loading="lazy" alt="Gypsum design"></div>
+    <img src="images/project15.jpg" onclick="openLightbox(this.src)"></div>
   
   <div class="item">
-    <img src="images/project16.jpg" loading="lazy" alt="Gypsum design"></div>
+    <img src="images/project16.jpg" onclick="openLightbox(this.src)"></div>
   
   <div class="item">
-    <img src="images/project17.jpg" loading="lazy" alt="Gypsum design"></div>
+    <img src="images/project17.jpg"onclick="openLightbox(this.src)"></div>
   
   <div class="item">
-    <img src="images/project18.jpg" loading="lazy" alt="Gypsum design"></div>
+    <img src="images/project18.jpg" onclick="openLightbox(this.src)"></div>
   
   <div class="item">
-    <img src="images/project19.jpg" loading="lazy" alt="Gypsum design"></div>
+    <img src="images/project19.jpg" onclick="openLightbox(this.src)"></div>
 
   <div class="item">
-    <img src="images/projec20.jpg" loading="lazy" alt="Gypsum design"></div>
+    <img src="images/projec20.jpg" onclick="openLightbox(this.src)"></div>
   
   <div class="item">
-    <img src="images/project21.jpg" loading="lazy" alt="Gypsum design">></div>
+    <img src="images/project21.jpg"onclick="openLightbox(this.src)"></div>
   
   <div class="item">
-    <img src="images/project22.jpg" loading="lazy" alt="Gypsum design"></div>
+    <img src="images/project22.jpg"onclick="openLightbox(this.src)"></div>
   
   <div class="item">
-    <img src="images/project23.jpg" loading="lazy" alt="Gypsum design"></div>
+    <img src="images/project23.jpg" onclick="openLightbox(this.src)"></div>
   
   <div class="item">
-    <img src="images/project24.jpg" loading="lazy" alt="Gypsum design">></div>
+    <img src="images/project24.jpg"onclick="openLightbox(this.src)"></div>
 </div>
   </div>
 <section class="final-cta">
@@ -246,9 +246,24 @@ Wasiliana nasi leo kwa ushauri na huduma ya kitaalamu.
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script> 
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
+
+<script>
+function openLightbox(src) {
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = src;
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>  
 </body>
 
 </html>
+
 
 
 
