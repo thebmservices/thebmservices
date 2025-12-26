@@ -2,129 +2,152 @@
 <html lang="sw">
 <head>
   <meta charset="UTF-8">
-  <title>Get Quote | TheBmservices</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Pata Quote | TheBmservice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f6f1eb;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(to right, #2c2c2c, #5a3e2b);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+
+    select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .preview {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .preview img {
+      max-width: 100%;
+      max-height: 200px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+
+    .btn {
+      margin-top: 25px;
+      width: 100%;
+      padding: 15px;
+      background: #25d366;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+  </style>
 </head>
+
 <body>
 
-<header class="brand-header">
-  <h1 class="logo">Get Quote</h1>
-  <p class="subtitle">Tujulishe unachohitaji, tutakupatia bei</p>
+<header>
+  <h1>Pata Quote</h1>
+  <p>Thebm GypsumPro Finishing Team</p>
 </header>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="projects.html">Our Projects</a>
-  <a href="contact.html">Contact Us</a>
-</nav>
+<div class="container">
 
-<section class="quote-section">
-  <h2>Omba Bei (Request a Quote)</h2>
-<div id="selected-image-box" style="display:none; margin-bottom:20px;">
-  <h3>Picha Uliyochagua</h3>
-  <img id="selected-image"
-       src=""
-       style="max-width:100%; border-radius:10px;">
+  <label>Chagua Huduma</label>
+  <select id="service">
+    <option value="">-- Chagua Huduma --</option>
+    <option>Gypsum Ceiling Design</option>
+    <option>Interior Design</option>
+    <option>Kitchen Design</option>
+    <option>Skimming & Painting</option>
+    <option>Electrical & Lighting</option>
+  </select>
+
+  <label>Maelezo ya Mradi</label>
+  <textarea id="message" placeholder="Andika maelezo ya mradi wako hapa..."></textarea>
+
+  <div class="preview" id="imagePreview" style="display:none;">
+    <p><strong>Picha ya mfano uliyochagua:</strong></p>
+    <img id="selectedImg">
+  </div>
+
+  <button class="btn" onclick="sendWhatsApp()">Tuma Ombi WhatsApp</button>
+
 </div>
-  <img id="previewImage" style="max-width:300px; display:none;">
-  <form id="quoteForm">
 
-    <label>Jina lako</label>
-    <input type="text" id="name" required>
-
-    <label>Namba ya simu</label>
-    <input type="tel" id="phone" required>
-
-    <label>Chagua Huduma</label>
-    <select id="service">
-      <option>Gypsum Ceiling</option>
-      <option>Interior Design</option>
-      <option>Kitchen Design</option>
-      <option>Lighting & Electrical</option>
-      <option>Skimming & Painting</option>
-      <option>Full Services</option>
-    </select>
-
-    <label>Chagua aina ya kazi (reference)</label>
-    <select id="reference">
-      <option>Gypsum Design</option>
-      <option>Kitchen</option>
-      <option>Interior</option>
-      <option>Lighting</option>
-    </select>
-<label>Chagua picha za mfano (hiari):</label>
-<input type="file" name="reference_images" accept="image/*" multiple>
-
-    <label>Maelezo ya ziada</label>
-    <textarea id="message"></textarea>
-
-    <button type="submit" class="contact-btn">
-      Tuma Maombi (WhatsApp)
-    </button>
-
-  </form>
-</section>
-const preview = document.getElementById("previewImage");
-const img = localStorage.getItem("selectedProjectImage");
-
-if (img) {
-  preview.src = img;
-  preview.style.display = "block";
-}
 <script>
-document.getElementById("quoteForm").addEventListener("submit",const selectedImage = localStorage.getItem("selectedProjectImage"); function(e){
-  e.preventDefault();
-
-  const name = document.getElementById("name").value;
-  const phone = document.getElementById("phone").value;
-  const service = document.getElementById("service").value;
-  const reference = document.getElementById("reference").value;
-  const message = document.getElementById("message").value;
-
-  const text = `JINA: ${name}%0aSIMU: ${phone}%0aHUDUMA: ${service}%0aAINA: ${reference}%0aMAELEZO: ${message}`;
-
-  window.open(`https://wa.me/255764840447?text=${text}`, "_blank");
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const imgSrc = localStorage.getItem("selectedProjectImage");
-
-  if (imgSrc) {
-    document.getElementById("selected-image").src = imgSrc;
-    document.getElementById("selected-image-box").style.display = "block";
-  }
-});
-</script> 
-<script>
-document.getElementById("quoteForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const service = document.getElementById("service").value;
-  const details = document.getElementById("details").value;
-
+  // On page load: pata picha iliyochaguliwa
   const selectedImage = localStorage.getItem("selectedProjectImage");
 
-  let message = "OMBI LA QUOTE%0A";
-  message += "Huduma: " + service + "%0A";
-  message += "Maelezo: " + details + "%0A";
-
   if (selectedImage) {
-    message += "Picha ya mfano: " + selectedImage;
+    document.getElementById("imagePreview").style.display = "block";
+    document.getElementById("selectedImg").src = selectedImage;
   }
 
-  const whatsappURL =
-    "https://wa.me/255764840447?text=" + message;
+  function sendWhatsApp() {
+    const service = document.getElementById("service").value;
+    const message = document.getElementById("message").value;
 
-  window.open(whatsappURL, "_blank");
-});
-</script>  
+    if (service === "") {
+      alert("Tafadhali chagua huduma.");
+      return;
+    }
+
+    let text = "Habari TheBmservice,%0A%0A";
+    text += "Nahitaji huduma ya: " + service + "%0A%0A";
+
+    if (message.trim() !== "") {
+      text += "Maelezo ya mradi:%0A" + message + "%0A%0A";
+    }
+
+    if (selectedImage) {
+      text += "Picha ya mfano (reference):%0A" + selectedImage + "%0A%0A";
+    }
+
+    text += "Asante.";
+
+    const phone = "255764840447";
+    const url = "https://wa.me/" + phone + "?text=" + text;
+
+    window.open(url, "_blank");
+  }
+</script>
+
 </body>
-
 </html>
-
-
-
-
-
