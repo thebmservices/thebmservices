@@ -3,167 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <title>Get Quote | TheBmservices</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="style.css">
-
-  <style>
-    body {
-      background: #f4f4f4;
-      font-family: Arial, sans-serif;
-    }
-
-    /* ===== NAVIGATION ===== */
-    .top-nav {
-      position: sticky;
-      top: 0;
-      background: #2c2c2c;
-      padding: 12px 20px;
-      display: flex;
-      gap: 20px;
-      z-index: 1000;
-    }
-
-    .top-nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .top-nav a:hover {
-      color: #f1c40f;
-    }
-
-    /* ===== QUOTE BOX ===== */
-    .quote-container {
-      max-width: 600px;
-      background: #ffffff;
-      margin: 30px auto;
-      padding: 25px;
-      border-radius: 14px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    }
-
-    .quote-container h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    label {
-      font-weight: bold;
-      margin-top: 15px;
-      display: block;
-    }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 12px;
-      margin-top: 6px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-
-    textarea {
-      resize: vertical;
-    }
-
-    .preview-box {
-      margin-top: 15px;
-      text-align: center;
-    }
-
-    .preview-box img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-top: 10px;
-    }
-
-    .whatsapp-btn {
-      margin-top: 25px;
-      width: 100%;
-      padding: 16px;
-      background: #25d366;
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-    }
-
-    .whatsapp-btn:hover {
-      background: #1ebe5d;
-    }
-  </style>
 </head>
-
 <body>
 
-<!-- ===== NAV ===== -->
-<div class="top-nav">
+<!-- NAVIGATION -->
+<nav class="main-nav">
   <a href="index.html">Home</a>
   <a href="services.html">Services</a>
   <a href="projects.html">Our Projects</a>
-  <a href="index.html#contact">Contact</a>
-</div>
+  <a href="quote.html" class="active">Get Quote</a>
+</nav>
 
-<!-- ===== QUOTE FORM ===== -->
-<div class="quote-container">
-  <h2>Get Quote</h2>
+<!-- QUOTE SECTION -->
+<section class="quote-section">
+  <h1>Pata Quote / Get a Quote</h1>
+  <p>
+    Tafadhali jaza taarifa zako hapa chini.  
+    <br>
+    <small>Please fill the form below, we will contact you shortly.</small>
+  </p>
 
-  <label>Jina lako</label>
-  <input type="text" id="clientName" placeholder="Mf. John Doe">
+  <form id="quoteForm">
 
-  <label>Eneo la Mradi (Location)</label>
-  <input type="text" id="location" placeholder="Mf. Dar es Salaam">
+    <label>Jina lako / Your Name</label>
+    <input type="text" id="name" required>
 
-  <label>Chagua Huduma</label>
-  <select id="service">
-    <option>Gypsum Ceiling</option>
-    <option>Interior Design</option>
-    <option>Kitchen Design</option>
-    <option>Electrical & Lighting</option>
-    <option>Skimming & Painting</option>
-  </select>
+    <label>Mahali Site ilipo / Project Location</label>
+    <input type="text" id="location" placeholder="Mfano: Kisasa - Dar es Salaam" required>
 
-  <label>Maelezo ya Mradi</label>
-  <textarea id="details" rows="4" placeholder="Eleza mahitaji yako..."></textarea>
+    <label>Chagua Huduma / Select Service</label>
+    <select id="service" required>
+      <option value="">-- Chagua Huduma --</option>
+      <option>Gypsum Ceiling</option>
+      <option>Interior Design</option>
+      <option>Kitchen Design</option>
+      <option>Skimming & Painting</option>
+      <option>Electrical & Lighting</option>
+    </select>
 
-  <div class="preview-box">
-    <strong>Picha ya mfano uliyochagua:</strong>
-    <img id="selectedImagePreview" alt="Hakuna picha">
-  </div>
+    <label>Maelezo ya Mradi / Project Details</label>
+    <textarea id="details" rows="4" placeholder="Eleza kwa ufupi mradi wako..." required></textarea>
 
-  <button class="whatsapp-btn" onclick="sendQuote()">Tuma Ombi WhatsApp</button>
-</div>
+    <button type="submit" class="whatsapp-btn">
+      Tuma Ombi WhatsApp
+    </button>
 
-<!-- ===== SCRIPT ===== -->
+  </form>
+</section>
+
 <script>
-  const selectedImage = localStorage.getItem("selectedProjectImage");
-  if (selectedImage) {
-    document.getElementById("selectedImagePreview").src = selectedImage;
-  }
+document.getElementById("quoteForm").addEventListener("submit", function(e){
+  e.preventDefault();
 
-  function sendQuote() {
-    const name = document.getElementById("clientName").value;
-    const location = document.getElementById("location").value;
-    const service = document.getElementById("service").value;
-    const details = document.getElementById("details").value;
+  const name = document.getElementById("name").value;
+  const location = document.getElementById("location").value;
+  const service = document.getElementById("service").value;
+  const details = document.getElementById("details").value;
 
-    let message =
-      "Habari TheBmservices,%0A%0A" +
-      "Jina: " + name + "%0A" +
-      "Eneo: " + location + "%0A" +
-      "Huduma: " + service + "%0A" +
-      "Maelezo: " + details;
+  let message =
+    "Habari TheBmservices,\n\n" +
+    "Jina: " + name + "\n" +
+    "Location: " + location + "\n" +
+    "Huduma: " + service + "\n\n" +
+    "Maelezo ya Mradi:\n" + details + "\n\n" +
+    "Ningependa kupata quote. Asanteni.";
 
-    if (selectedImage) {
-      message += "%0A%0APicha ya mfano: " + selectedImage;
-    }
-
-    const phone = "255764840447";
-    window.open("https://wa.me/" + phone + "?text=" + message, "_blank");
-  }
+  const url = "https://wa.me/255764840447?text=" + encodeURIComponent(message);
+  window.open(url, "_blank");
+});
 </script>
 
 </body>
