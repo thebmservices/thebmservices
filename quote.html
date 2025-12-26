@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <title>Pata Quote | TheBmservice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="brand-header">
+  <h1 class="logo">Pata Quote</h1>
+  <p class="subtitle">Tujulishe unachohitaji, tutakupatia bei</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="projects.html">Our Projects</a>
+  <a href="contact.html">Contact Us</a>
+</nav>
+
+<section class="quote-section">
+  <h2>Omba Bei (Request a Quote)</h2>
+
+  <form id="quoteForm">
+
+    <label>Jina lako</label>
+    <input type="text" id="name" required>
+
+    <label>Namba ya simu</label>
+    <input type="tel" id="phone" required>
+
+    <label>Chagua Huduma</label>
+    <select id="service">
+      <option>Gypsum Ceiling</option>
+      <option>Interior Design</option>
+      <option>Kitchen Design</option>
+      <option>Lighting & Electrical</option>
+      <option>Skimming & Painting</option>
+    </select>
+
+    <label>Chagua aina ya kazi (reference)</label>
+    <select id="reference">
+      <option>Gypsum Design</option>
+      <option>Kitchen</option>
+      <option>Interior</option>
+      <option>Lighting</option>
+    </select>
+
+    <label>Maelezo ya ziada</label>
+    <textarea id="message"></textarea>
+
+    <button type="submit" class="contact-btn">
+      Tuma Maombi (WhatsApp)
+    </button>
+
+  </form>
+</section>
+
+<script>
+document.getElementById("quoteForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const service = document.getElementById("service").value;
+  const reference = document.getElementById("reference").value;
+  const message = document.getElementById("message").value;
+
+  const text = `JINA: ${name}%0aSIMU: ${phone}%0aHUDUMA: ${service}%0aAINA: ${reference}%0aMAELEZO: ${message}`;
+
+  window.open(`https://wa.me/255764840447?text=${text}`, "_blank");
+});
+</script>
+
+</body>
+</html>
