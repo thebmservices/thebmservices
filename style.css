@@ -794,3 +794,43 @@ input[type="file"] {
   max-height: 90%;
   border-radius: 10px;
 }
+.quote-section {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.quote-section h1 {
+  text-align: center;
+}
+
+.quote-section label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.quote-section input,
+.quote-section select,
+.quote-section textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.whatsapp-btn {
+  margin-top: 20px;
+  width: 100%;
+  background: #25d366;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
