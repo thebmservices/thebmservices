@@ -2,127 +2,167 @@
 <html lang="sw">
 <head>
   <meta charset="UTF-8">
-  <title>Pata Quote | TheBmservice</title>
+  <title>Get Quote | TheBmservices</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+
   <style>
     body {
+      background: #f4f4f4;
       font-family: Arial, sans-serif;
-      background: #f6f1eb;
-      margin: 0;
-      padding: 20px;
     }
 
-    .quote-box {
-      max-width: 500px;
-      background: #ffffff;
-      margin: auto;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    /* ===== NAVIGATION ===== */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      background: #2c2c2c;
+      padding: 12px 20px;
+      display: flex;
+      gap: 20px;
+      z-index: 1000;
     }
 
-    h1 {
-      text-align: center;
-      color: #3b2f25;
-    }
-
-    label {
-      display: block;
-      margin-top: 15px;
+    .top-nav a {
+      color: #fff;
+      text-decoration: none;
       font-weight: bold;
     }
 
-    select, textarea, button {
+    .top-nav a:hover {
+      color: #f1c40f;
+    }
+
+    /* ===== QUOTE BOX ===== */
+    .quote-container {
+      max-width: 600px;
+      background: #ffffff;
+      margin: 30px auto;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    .quote-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 15px;
+      display: block;
+    }
+
+    input, select, textarea {
       width: 100%;
       padding: 12px;
-      margin-top: 8px;
+      margin-top: 6px;
       border-radius: 8px;
       border: 1px solid #ccc;
-      font-size: 15px;
     }
 
     textarea {
       resize: vertical;
-      min-height: 80px;
     }
 
-    .selected-image {
+    .preview-box {
       margin-top: 15px;
       text-align: center;
     }
 
-    .selected-image img {
+    .preview-box img {
       max-width: 100%;
-      max-height: 200px;
       border-radius: 10px;
-      border: 1px solid #ddd;
+      margin-top: 10px;
     }
 
-    button {
+    .whatsapp-btn {
+      margin-top: 25px;
+      width: 100%;
+      padding: 16px;
       background: #25d366;
       color: white;
+      font-size: 16px;
       font-weight: bold;
       border: none;
-      margin-top: 20px;
+      border-radius: 30px;
       cursor: pointer;
     }
 
-    button:hover {
-      opacity: 0.9;
+    .whatsapp-btn:hover {
+      background: #1ebe5d;
     }
   </style>
 </head>
+
 <body>
 
-  <div class="quote-box">
-    <h1>Pata Quote</h1>
+<!-- ===== NAV ===== -->
+<div class="top-nav">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="projects.html">Our Projects</a>
+  <a href="index.html#contact">Contact</a>
+</div>
 
-    <label>Chagua Huduma</label>
-    <select id="service">
-      <option>Gypsum Ceiling</option>
-      <option>Interior Design</option>
-      <option>Kitchen Design</option>
-      <option>Skimming & Painting</option>
-      <option>Electrical & Lighting</option>
-    </select>
+<!-- ===== QUOTE FORM ===== -->
+<div class="quote-container">
+  <h2>Get Quote</h2>
 
-    <label>Maelezo ya ziada</label>
-    <textarea id="details" placeholder="Eleza mahitaji yako..."></textarea>
+  <label>Jina lako</label>
+  <input type="text" id="clientName" placeholder="Mf. John Doe">
 
-    <div class="selected-image" id="imageBox">
-      <!-- Picha itaonekana hapa -->
-    </div>
+  <label>Eneo la Mradi (Location)</label>
+  <input type="text" id="location" placeholder="Mf. Dar es Salaam">
 
-    <button onclick="sendQuote()">Tuma Quote WhatsApp</button>
+  <label>Chagua Huduma</label>
+  <select id="service">
+    <option>Gypsum Ceiling</option>
+    <option>Interior Design</option>
+    <option>Kitchen Design</option>
+    <option>Electrical & Lighting</option>
+    <option>Skimming & Painting</option>
+  </select>
+
+  <label>Maelezo ya Mradi</label>
+  <textarea id="details" rows="4" placeholder="Eleza mahitaji yako..."></textarea>
+
+  <div class="preview-box">
+    <strong>Picha ya mfano uliyochagua:</strong>
+    <img id="selectedImagePreview" alt="Hakuna picha">
   </div>
 
+  <button class="whatsapp-btn" onclick="sendQuote()">Tuma Ombi WhatsApp</button>
+</div>
+
+<!-- ===== SCRIPT ===== -->
 <script>
   const selectedImage = localStorage.getItem("selectedProjectImage");
-
-  if(selectedImage){
-    document.getElementById("imageBox").innerHTML =
-      `<p><strong>Picha uliyochagua</strong></p>
-       <img src="${selectedImage}">`;
+  if (selectedImage) {
+    document.getElementById("selectedImagePreview").src = selectedImage;
   }
 
-  function sendQuote(){
+  function sendQuote() {
+    const name = document.getElementById("clientName").value;
+    const location = document.getElementById("location").value;
     const service = document.getElementById("service").value;
     const details = document.getElementById("details").value;
 
-    let message = "Habari TheBmservice,%0A%0A";
-    message += "Nahitaji huduma ya: " + service + "%0A";
+    let message =
+      "Habari TheBmservices,%0A%0A" +
+      "Jina: " + name + "%0A" +
+      "Eneo: " + location + "%0A" +
+      "Huduma: " + service + "%0A" +
+      "Maelezo: " + details;
 
-    if(details.trim() !== ""){
-      message += "Maelezo: " + details + "%0A";
+    if (selectedImage) {
+      message += "%0A%0APicha ya mfano: " + selectedImage;
     }
 
-    if(selectedImage){
-      const fullImageLink = window.location.origin + "/" + selectedImage;
-      message += "Picha ya mfano: " + fullImageLink;
-    }
-
-    const whatsappURL = "https://wa.me/255764840447?text=" + message;
-    window.open(whatsappURL, "_blank");
+    const phone = "255764840447";
+    window.open("https://wa.me/" + phone + "?text=" + message, "_blank");
   }
 </script>
 
