@@ -21,7 +21,13 @@
 
 <section class="quote-section">
   <h2>Omba Bei (Request a Quote)</h2>
-
+<div id="selected-image-box" style="display:none; margin-bottom:20px;">
+  <h3>Picha Uliyochagua</h3>
+  <img id="selected-image"
+       src=""
+       style="max-width:100%; border-radius:10px;">
+</div>
+  <img id="previewImage" style="max-width:300px; display:none;">
   <form id="quoteForm">
 
     <label>Jina lako</label>
@@ -59,9 +65,15 @@
 
   </form>
 </section>
+const preview = document.getElementById("previewImage");
+const img = localStorage.getItem("selectedProjectImage");
 
+if (img) {
+  preview.src = img;
+  preview.style.display = "block";
+}
 <script>
-document.getElementById("quoteForm").addEventListener("submit", function(e){
+document.getElementById("quoteForm").addEventListener("submit",const selectedImage = localStorage.getItem("selectedProjectImage"); function(e){
   e.preventDefault();
 
   const name = document.getElementById("name").value;
@@ -75,10 +87,43 @@ document.getElementById("quoteForm").addEventListener("submit", function(e){
   window.open(`https://wa.me/255764840447?text=${text}`, "_blank");
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const imgSrc = localStorage.getItem("selectedProjectImage");
 
+  if (imgSrc) {
+    document.getElementById("selected-image").src = imgSrc;
+    document.getElementById("selected-image-box").style.display = "block";
+  }
+});
+</script> 
+<script>
+document.getElementById("quoteForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const service = document.getElementById("service").value;
+  const details = document.getElementById("details").value;
+
+  const selectedImage = localStorage.getItem("selectedProjectImage");
+
+  let message = "OMBI LA QUOTE%0A";
+  message += "Huduma: " + service + "%0A";
+  message += "Maelezo: " + details + "%0A";
+
+  if (selectedImage) {
+    message += "Picha ya mfano: " + selectedImage;
+  }
+
+  const whatsappURL =
+    "https://wa.me/255764840447?text=" + message;
+
+  window.open(whatsappURL, "_blank");
+});
+</script>  
 </body>
 
 </html>
+
 
 
 
