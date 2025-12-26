@@ -768,3 +768,10 @@ body {
   border-radius: 8px;
   border: 1px solid #ccc;
 }
+input[type="file"] {
+  padding: 10px;
+  border: 2px dashed #ccc;
+  background: #f9f9f9;
+  border-radius: 8px;
+  width: 100%;
+}
