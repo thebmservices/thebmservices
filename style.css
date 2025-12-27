@@ -1237,5 +1237,33 @@ body {
     display: block;
   }
 }
+/* ===== FIX STICKY NAVBAR (FINAL & SAFE) ===== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: rgba(20, 20, 20, 0.95);
+  backdrop-filter: blur(6px);
+}
+
+/* hakikisha hero haisukumi menu */
+.hero {
+  margin-top: 0;
+}
+
+/* mobile fix */
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  body {
+    padding-top: 70px; /* nafasi ya menu */
+  }
+}
 
 
