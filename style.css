@@ -934,4 +934,23 @@ p  { font-size: clamp(14px, 4vw, 18px); }nav {
 nav a {
   white-space: nowrap;
 }
+/* ===== MOBILE FIX ===== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+section, header, nav, footer {
+  width: 100%;
+}
 
