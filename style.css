@@ -1287,5 +1287,34 @@ body {
 body {
   padding-top: 80px;
 }
+/* ===== STICKY NAVBAR – PC & MOBILE FIX ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(6px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 20px;
+}
+
+/* nafasi juu ili content isigongane na menu */
+body {
+  padding-top: 80px;
+}
+
+/* Hakikisha hero hairudishi menu nyuma */
+.hero,
+.brand-header {
+  position: relative;
+  z-index: 1;
+}
 
 
