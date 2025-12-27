@@ -1107,3 +1107,16 @@ body {
 body {
   overflow-x: hidden;
 }
+/* ===== STICKY NAVBAR FIX (SAFE) ===== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: #ffffff;
+}
+
+/* Hakikisha content haipandi juu ya menu */
+body {
+  margin: 0;
+}
