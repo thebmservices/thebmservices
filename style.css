@@ -953,4 +953,41 @@ img {
 section, header, nav, footer {
   width: 100%;
 }
+/* ===== MOBILE MENU (HAMBURGER) ===== */
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  nav {
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #2c2c2c;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    text-align: center;
+    padding: 12px 0;
+  }
+}
 
