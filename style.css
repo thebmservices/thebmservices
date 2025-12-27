@@ -1089,3 +1089,21 @@ body {
   background: #ffffff;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
+/* ===== STICKY NAV FIX (SAFE) ===== */
+
+/* chukua header yako ya sasa bila kubadilisha muundo */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+/* hakikisha haifichwi */
+.nav-container {
+  background: inherit;
+}
+
+/* zuia menu isipotee wakati wa scroll */
+body {
+  overflow-x: hidden;
+}
