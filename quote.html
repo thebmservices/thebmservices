@@ -74,7 +74,15 @@ document.getElementById("quoteForm").addEventListener("submit", function(e){
   window.open(url, "_blank");
 });
 </script>
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("navMenu");
 
+  hamburger.onclick = () => {
+    navMenu.classList.toggle("active");
+  };
+</script>
 </body>
 </html>
+
 
