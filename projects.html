@@ -31,6 +31,7 @@
     ☰
  </div>
 </div>  
+</nav>  
 <header class="brand-header">
   <img src="images/logo.png" alt="TheBmservices Logo" class="logo-img">
 
@@ -233,10 +234,16 @@ function selectProjectImage(img) {
   hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("active");
   });
-</script>  
+</script>
+  <script>
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
 </body>
 
 </html>
+
 
 
 
