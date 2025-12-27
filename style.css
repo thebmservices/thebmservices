@@ -1265,5 +1265,27 @@ body {
     padding-top: 70px; /* nafasi ya menu */
   }
 }
+/* ===== FORCE STICKY NAV ON DESKTOP & MOBILE ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 20px;
+}
+
+/* kuzuia content isigongane na menu */
+body {
+  padding-top: 80px;
+}
 
 
