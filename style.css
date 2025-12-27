@@ -34,25 +34,7 @@ footer {
   color: white;
   text-align: center;
   padding: 10px;
-}/* ===== MASONRY GALLERY FIX ===== */
-
-.gallery {
-  column-count: 3;
-  column-gap: 20px;
-}
-
-@media (max-width: 900px) {
-  .gallery {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 500px) {
-  .gallery {
-    column-count: 1;
-  }
-}
-
+ } 
 .item {
   break-inside: avoid;
   margin-bottom: 20px;
@@ -834,18 +816,28 @@ input[type="file"] {
   font-size: 16px;
   cursor: pointer;
 }
-/* PROJECT GALLERY */
+/* ===== PROJECT GALLERY ===== */
+
 .gallery {
-  column-count: 3;
-  column-gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-@media (max-width: 900px) {
-  .gallery { column-count: 2; }
+.item {
+  background: #ffffff;
+  padding: 6px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-@media (max-width: 500px) {
-  .gallery { column-count: 1; }
+.item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
 }
 
 .item {
@@ -942,3 +934,4 @@ p  { font-size: clamp(14px, 4vw, 18px); }nav {
 nav a {
   white-space: nowrap;
 }
+
