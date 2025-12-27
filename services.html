@@ -194,8 +194,16 @@ tunakuhakishia huduma bora na kwa muda sahii daima tunalinda tabasamu la nyumba 
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>  
 </body>
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("navMenu");
 
+  hamburger.onclick = () => {
+    navMenu.classList.toggle("active");
+  };
+</script>
 </html>
+
 
 
 
