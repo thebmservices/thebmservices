@@ -1152,5 +1152,90 @@ body {
 body {
   margin: 0;
 }
+/* ===== STICKY NAVBAR FIX (FINAL) ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: #111;
+  width: 100%;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-logo img {
+  width: 40px;
+}
+
+.brand-text strong {
+  color: #fff;
+  font-size: 14px;
+}
+
+.brand-text span {
+  color: #caa04d;
+  font-size: 11px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.quote-btn {
+  background: #caa04d;
+  color: #000;
+  padding: 8px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ===== MOBILE ===== */
+.hamburger {
+  display: none;
+  font-size: 22px;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: #111;
+    width: 100%;
+    flex-direction: column;
+    display: none;
+    padding: 10px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
 
 
