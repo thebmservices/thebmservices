@@ -220,10 +220,19 @@ function selectProjectImage(img) {
   localStorage.setItem("selectedProjectImage", imageSrc);
   window.location.href = "quote.html";
 }
-</script>    
+</script>
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("navMenu");
+
+  hamburger.onclick = () => {
+    navMenu.classList.toggle("active");
+  };
+</script>  
 </body>
 
 </html>
+
 
 
 
